@@ -1,0 +1,28 @@
+school
+
+student
+    firstname
+    lastname
+    middlename
+    course
+    year
+    section
+    status
+
+contact_information
+    number
+    email
+    address
+    student_id
+
+subject
+    image
+    title
+    description
+    status
+
+student_subjects - one to many and many to many
+    student_id
+    subject
+
+

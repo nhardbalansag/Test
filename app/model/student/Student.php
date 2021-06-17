@@ -6,5 +6,20 @@ use Illuminate\Database\Eloquent\Model;
 
 class Student extends Model
 {
-    //
+    protected $fillable = [
+        'firstname',
+        'lastname',
+        'middlename',
+        'course',
+        'year',
+        'section',
+        'status',
+    ];
+
+
+    public function contactInformation(){
+
+        return $this->hasOne('App\model\contact_information\ContactInformation');
+
+    }
 }

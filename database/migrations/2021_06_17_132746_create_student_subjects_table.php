@@ -14,7 +14,22 @@ class CreateStudentSubjectsTable extends Migration
     public function up()
     {
         Schema::create('student_subjects', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
+
+            $table->integer('student_id')->unsigned();
+            $table->foreign('student_id')
+            ->references('id')
+            ->on('students')
+            ->onDelete('cascade')
+            ->onUpdate('cascade');
+
+            $table->integer('subject_id')->unsigned();
+            $table->foreign('subject_id')
+            ->references('id')
+            ->on('subjects')
+            ->onDelete('cascade')
+            ->onUpdate('cascade');
+
             $table->timestamps();
         });
     }

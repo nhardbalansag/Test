@@ -68,7 +68,7 @@
                                                     <td>
                                                         <div class="col-12 col-md-12 row">
                                                             <div class="col-md-4">
-                                                                <button class="btn btn-primary">add</button>
+                                                                <a href="{{ route('addsubjectstudent', ['student_id' => $value->id]) }}" class="btn btn-primary">Add</a>
                                                             </div>
                                                             <div class="col-md-4">
                                                                 @livewire('delete-student', ['student_id' => $value->id])

@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
-use App\Http\Controllers\web\cms\{StudentController, MainController, SubjectController};
+use App\Http\Controllers\web\cms\{StudentController, MainController, SubjectController, StudentSubjectController};
 
 /*
 |--------------------------------------------------------------------------
@@ -28,4 +28,5 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::prefix('student')->group(function () {
     Route::get('edit-student', [StudentController::class, 'editStudent'])->name('editStudent');
     Route::get('create-subject', [SubjectController::class, 'createSubject'])->name('createSubject');
+    Route::get('add-subject-student', [StudentSubjectController::class, 'addsubjectstudent'])->name('addsubjectstudent');
 });

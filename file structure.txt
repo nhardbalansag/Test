@@ -19,7 +19,6 @@ subject
     image
     title
     description
-    status
 
 student_subjects - one to many and many to many
     student_id

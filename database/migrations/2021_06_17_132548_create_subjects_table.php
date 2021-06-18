@@ -18,7 +18,6 @@ class CreateSubjectsTable extends Migration
             $table->string('image');
             $table->string('title');
             $table->string('description');
-            $table->string('status');
             $table->timestamps();
         });
     }

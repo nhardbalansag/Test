@@ -12,8 +12,7 @@ class Student extends Model
         'middlename',
         'course',
         'year',
-        'section',
-        'status',
+        'section'
     ];
 
 

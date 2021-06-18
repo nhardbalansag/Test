@@ -17,11 +17,10 @@ class CreateStudentsTable extends Migration
             $table->increments('id');
             $table->string('firstname');
             $table->string('lastname');
-            $table->string('middlename');
+            $table->string('middlename')->nullable();
             $table->string('course');
             $table->string('year');
             $table->string('section');
-            $table->string('status');
             $table->timestamps();
         });
     }

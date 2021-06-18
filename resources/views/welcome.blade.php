@@ -1,100 +1,97 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+    <title>{{ config('app.name', 'Laravel') }}</title>
 
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Nunito', sans-serif;
-                font-weight: 200;
-                height: 100vh;
-                margin: 0;
-            }
+    <!-- Scripts -->
+    <script src="{{ asset('js/app.js') }}"></script>
 
-            .full-height {
-                height: 100vh;
-            }
+    <link rel="icon" href="{{ asset('staticImage/BPH.png') }}">
 
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
+    <!-- Fonts -->
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
-            .position-ref {
-                position: relative;
-            }
+    <!-- Styles -->
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
+    {{-- admin lte --}}
+        <!-- Google Font: Source Sans Pro -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+        <!-- Font Awesome Icons -->
+        <link rel="stylesheet" href="{{ asset('plugins/fontawesome-free/css/all.min.css') }}">
+        <!-- IonIcons -->
+        <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+        <!-- DataTables -->
+        <link rel="stylesheet" href="{{ asset('plugins/datatables-bs4/css/dataTables.bootstrap4.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('plugins/datatables-responsive/css/responsive.bootstrap4.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('plugins/datatables-buttons/css/buttons.bootstrap4.min.css') }}">
+        <!-- Theme style -->
+        <link rel="stylesheet" href="{{ asset('dist/css/adminlte.min.css') }}">
 
-            .content {
-                text-align: center;
-            }
+        @livewireStyles
 
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 13px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
-
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel
-                </div>
-
-                <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://vapor.laravel.com">Vapor</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+    {{-- admin lte end --}}
+</head>
+<body class="hold-transition sidebar-mini">
+    <div id="app">
+        <main>
+            <div class="wrapper">
+                @include('content.cms.includes.main-side-bar')
+                <div class="content-wrapper">
+                    @yield('home-contents')
                 </div>
             </div>
-        </div>
-    </body>
+        </main>
+    </div>
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
+    {{-- fontawesome --}}
+        <script src="https://kit.fontawesome.com/9002f92f37.js" crossorigin="anonymous"></script>
+    {{-- end fontawesome --}}
+
+    {{-- admin lte scripts --}}
+        <!-- jQuery -->
+        <script src="{{ asset('plugins/jquery/jquery.min.js') }}"></script>
+        <!-- Bootstrap -->
+        <script src="{{ asset('plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+        <!-- AdminLTE -->
+        <script src="{{ asset('dist/js/adminlte.js') }}"></script>
+
+        <!-- OPTIONAL SCRIPTS -->
+        <script src="{{ asset('plugins/chart.js/Chart.min.js') }}"></script>
+        <!-- AdminLTE for demo purposes -->
+        <script src="{{ asset('dist/js/demo.js') }}"></script>
+        <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+        <script src="{{ asset('dist/js/pages/dashboard3.js') }}"></script>
+
+        <script src="{{ asset('plugins/datatables/jquery.dataTables.min.js') }}"></script>
+        <script src="{{ asset('plugins/datatables-bs4/js/dataTables.bootstrap4.min.js') }}"></script>
+        <script src="{{ asset('plugins/datatables-responsive/js/dataTables.responsive.min.js') }}"></script>
+        <script src="{{ asset('plugins/datatables-responsive/js/responsive.bootstrap4.min.js') }}"></script>
+        <script src="{{ asset('plugins/datatables-buttons/js/dataTables.buttons.min.js') }}"></script>
+        <script src="{{ asset('plugins/datatables-buttons/js/buttons.bootstrap4.min.js') }}"></script>
+        <script src="{{ asset('plugins/jszip/jszip.min.js') }}"></script>
+        <script src="{{ asset('plugins/pdfmake/pdfmake.min.js') }}"></script>
+        <script src="{{ asset('plugins/pdfmake/vfs_fonts.js') }}"></script>
+        <script src="{{ asset('plugins/datatables-buttons/js/buttons.html5.min.js') }}"></script>
+        <script src="{{ asset('plugins/datatables-buttons/js/buttons.print.min.js') }}"></script>
+        <script src="{{ asset('plugins/datatables-buttons/js/buttons.colVis.min.js') }}"></script>
+    {{-- end admin lte scripts --}}
+
+    {{-- youtube button --}}
+    <script src="https://apis.google.com/js/platform.js"></script>
+
+    @livewireScripts
+
+    @stack('custom-scripts')
+
+</body>
 </html>
+

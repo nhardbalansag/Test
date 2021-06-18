@@ -7,234 +7,64 @@
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                 <li class="nav-item
                         {{
-                            (Request::route()->getName() === "social-media-category" ? 'menu-open' :
-                            (Request::route()->getName() === "service-category-list" ? 'menu-open' : ''))
+                             (Request::route()->getName() === "studentlist" ? 'active' : '')
                         }}
                         "
                     >
                     <a href="#" class="nav-link
                         {{
-                            (Request::route()->getName() === "social-media-category" ? 'active' :
-                            (Request::route()->getName() === "service-category-list" ? 'active' : ''))
+                             (Request::route()->getName() === "studentlist" ? 'active' : '')
                         }}
                         "
                     >
-                        <i class="nav-icon fas fa-chart-pie"></i>
+                        <i class="nav-icon fas fa-user"></i>
                         <p>
-                            Platforms
+                            Students
                             <i class="right fas fa-angle-left"></i>
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="{{ route('social-media-category') }}" class="nav-link
+                            <a href="{{ route('studentlist') }}" class="nav-link
                                 {{
-                                    (Request::route()->getName() === "social-media-category" ? 'active' :
-                                    (Request::route()->getName() === "service-category-list" ? 'active' :
-                                    (Request::route()->getName() === "add-email" ? 'active' : '')))
+                                    (Request::route()->getName() === "studentlist" ? 'active' : '')
                                 }}
                                 "
                             >
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Social Media Category</p>
+                                <p>Student List</p>
                             </a>
                         </li>
                     </ul>
                 </li>
-
                 <li class="nav-item
                         {{
-                            (Request::route()->getName() === "network-list" ? 'menu-open' :
-                            (Request::route()->getName() === "simcard-list" ? 'menu-open' :
-                            (Request::route()->getName() === "add-email" ? 'menu-open' :
-                            (Request::route()->getName() === "trash-sim" ? 'menu-open' : ''))))
+                             (Request::route()->getName() === "createSubject" ? 'active' : '')
                         }}
                         "
                     >
                     <a href="#" class="nav-link
                         {{
-                            (Request::route()->getName() === "network-list" ? 'active' :
-                            (Request::route()->getName() === "simcard-list" ? 'active' :
-                            (Request::route()->getName() === "add-email" ? 'active' :
-                            (Request::route()->getName() === "trash-sim" ? 'active' : ''))))
+                             (Request::route()->getName() === "createSubject" ? 'active' : '')
                         }}
                         "
                     >
-                        <i class="nav-icon fas fa-sim-card"></i>
+                        <i class="nav-icon fas fa-book"></i>
                         <p>
-                            Sim Manage
+                            Subject
                             <i class="right fas fa-angle-left"></i>
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="{{ route('network-list') }}" class="nav-link
+                            <a href="{{ route('createSubject') }}" class="nav-link
                                 {{
-                                    (Request::route()->getName() === "network-list" ? 'active' :
-                                    (Request::route()->getName() === "simcard-list" ? 'active' :
-                                    (Request::route()->getName() === "add-email" ? 'active' : '')))
+                                    (Request::route()->getName() === "createSubject" ? 'active' : '')
                                 }}
                                 "
                             >
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Networks</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{ route('trash-sim') }}" class="nav-link
-                                {{
-                                    (Request::route()->getName() === "trash-sim" ? 'active' : '')
-                                }}
-                                "
-                            >
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Trash</p>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-
-                <li class="nav-item
-                        {{
-                            (Request::route()->getName() === "email-list" ? 'menu-open' : '')
-                        }}
-                        "
-                    >
-                    <a href="#" class="nav-link
-                        {{
-                            (Request::route()->getName() === "email-list" ? 'active' : '')
-                        }}
-                        "
-                    >
-                        <i class="nav-icon fab fa-google-plus-g"></i>
-                        <p>
-                            Accounts
-                            <i class="right fas fa-angle-left"></i>
-                        </p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="{{ route('email-list') }}" class="nav-link
-                                {{
-                                    (Request::route()->getName() === "email-list" ? 'active' : '')
-                                }}
-                                "
-                            >
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Google Accounts</p>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-
-                <li class="nav-item
-                        {{
-                            (Request::route()->getName() === "add-new-cient" ? 'menu-open' :
-                            (Request::route()->getName() === "pending-transactions" ? 'menu-open' :
-                            (Request::route()->getName() === "done-transactions" ? 'menu-open' :
-                            (Request::route()->getName() === "lacking-transactions" ? 'menu-open' :
-                            (Request::route()->getName() === "invoice-transactions" ? 'menu-open' : '')))))
-                        }}
-                        "
-                    >
-                    <a href="#" class="nav-link
-                        {{
-                            (Request::route()->getName() === "add-new-cient" ? 'active' :
-                            (Request::route()->getName() === "pending-transactions" ? 'active' :
-                            (Request::route()->getName() === "done-transactions" ? 'active' :
-                            (Request::route()->getName() === "lacking-transactions" ? 'active' :
-                            (Request::route()->getName() === "invoice-transactions" ? 'active' : '')))))
-                        }}
-                        "
-                    >
-                        <i class="nav-icon fas fa-tasks"></i>
-                        <p>
-                            Transactions
-                            <i class="right fas fa-angle-left"></i>
-                        </p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="{{ route('add-new-cient') }}" class="nav-link
-                                {{
-                                    (Request::route()->getName() === "add-new-cient" ? 'active' : '')
-                                }}
-                                "
-                            >
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>New Client</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{ route('pending-transactions') }}" class="nav-link
-                                {{
-                                    (Request::route()->getName() === "pending-transactions" ? 'active' : '')
-                                }}
-                                "
-                            >
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>
-                                    Pending Transaction
-                                    {{-- <span class="badge badge-success right">{{ $subscription->count() }}</span> --}}
-                                </p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{ route('done-transactions') }}" class="nav-link
-                                {{
-                                    (Request::route()->getName() === "done-transactions" ? 'active' : '')
-                                }}
-                                "
-                            >
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Done Transaction</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{ route('lacking-transactions') }}" class="nav-link
-                                {{
-                                    (Request::route()->getName() === "lacking-transactions" ? 'active' : '')
-                                }}
-                                "
-                            >
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>
-                                    Lacking
-                                    {{-- <span class="badge badge-success right">{{ $lacking->count() }}</span> --}}
-                                </p>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-
-                <li class="nav-item
-                        {{
-                            (Request::route()->getName() === "view-price-list" ? 'menu-open' : '')
-                        }}
-                        "
-                    >
-                    <a href="#" class="nav-link
-                        {{
-                            (Request::route()->getName() === "view-price-list" ? 'active' : '')
-                        }}
-                        "
-                    >
-                        <i class="nav-icon fas fa-cogs"></i>
-                        <p>
-                            Settings
-                            <i class="right fas fa-angle-left"></i>
-                        </p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="{{ route('view-price-list') }}" class="nav-link
-                                {{
-                                    (Request::route()->getName() === "view-price-list" ? 'active' : '')
-                                }}
-                                "
-                            >
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Price</p>
+                                <p>create subject</p>
                             </a>
                         </li>
                     </ul>

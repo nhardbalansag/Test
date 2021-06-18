@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\web\cms\{StudentController, MainController, SubjectController};
 
 /*
 |--------------------------------------------------------------------------
@@ -17,6 +19,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/', [MainController::class, 'index'])->name('studentlist');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::prefix('student')->group(function () {
+    Route::get('edit-student', [StudentController::class, 'editStudent'])->name('editStudent');
+    Route::get('create-subject', [SubjectController::class, 'createSubject'])->name('createSubject');
+});
